@@ -48,6 +48,7 @@ export const HomePage: React.FC<{}> = () => {
                     {allCharacters?.map((character) => (
                       <Grid item xs={4}>
                         <CardComponent
+                          id={character.id}
                           key={character.id}
                           image={character.image}
                           name={character.name}

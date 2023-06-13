@@ -8,6 +8,7 @@ type ThemeProp = {
 enum themePallete {
     BG = '#12181b',
     LIME = '#C8FA5F',
+    RED = '#e6324b',
     FONT_GLOBAL = "'JetBrains Mono', monospace",
     //alert styles
     ERROR_MAIN = '#f44336',
@@ -23,7 +24,10 @@ const theme = createTheme({
             default: themePallete.BG,
         },
         primary:{
-            main: themePallete.LIME
+            main: themePallete.LIME,
+        },
+        secondary:{
+            main: themePallete.RED,
         }
     },
     typography:{
