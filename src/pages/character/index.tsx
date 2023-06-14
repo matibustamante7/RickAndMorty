@@ -5,12 +5,15 @@ import { characters } from "../../api/characters";
 import { useState } from "react";
 import { Box, Container, Divider, Grid, Typography, Chip, Button } from "@mui/material";
 import { CircularProgress } from "@mui/material";
+import { useTheme } from "@mui/material";
+
 export const CharacterDetail: React.FC = () => {
 
     const { id } = useParams();
     const [loading, setLoading] = useState<boolean>(true);
     const [character, setCharacter] = useState<ICharacter | null>();
     const navigate = useNavigate();
+    const theme = useTheme();
 
     useEffect(() => {
         setLoading(true)
@@ -48,8 +51,10 @@ export const CharacterDetail: React.FC = () => {
                                     {
                                         character?.status==='Alive' ? (
                                             <Chip color='primary' variant='outlined' label={character?.status}/>
-                                        ) : (
+                                        ) : character?.status==='Dead' ? (
                                             <Chip color='secondary' variant='outlined' label={character?.status}/>
+                                        ) : (
+                                            <Chip sx={{color:'blue'}} variant='outlined' label={character?.status}/>
                                         )
                                     }
                                     

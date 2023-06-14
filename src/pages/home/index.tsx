@@ -46,10 +46,11 @@ export const HomePage: React.FC<{}> = () => {
                 allCharacters?.length !== 0 ? (
                   <Grid sx={{ my: 2 }} container spacing={3} direction='row'>
                     {allCharacters?.map((character) => (
-                      <Grid item xs={4}>
+                      <Grid
+                        key={character.id}
+                        item xs={4}>
                         <CardComponent
                           id={character.id}
-                          key={character.id}
                           image={character.image}
                           name={character.name}
                           species={character.species}

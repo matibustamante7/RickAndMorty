@@ -9,6 +9,7 @@ enum themePallete {
     BG = '#12181b',
     LIME = '#C8FA5F',
     RED = '#e6324b',
+    VIOLET = '#7f00b2',
     FONT_GLOBAL = "'JetBrains Mono', monospace",
     //alert styles
     ERROR_MAIN = '#f44336',
@@ -17,7 +18,7 @@ enum themePallete {
     BG_SUCCESS_MAIN = 'rgba(102,187,106,0.1)',
 }
 
-const theme = createTheme({
+export const theme = createTheme({
     palette:{
         mode:'dark',
         background:{
@@ -27,8 +28,9 @@ const theme = createTheme({
             main: themePallete.LIME,
         },
         secondary:{
-            main: themePallete.RED,
-        }
+            main: themePallete.RED
+        },
+        
     },
     typography:{
         fontFamily:themePallete.FONT_GLOBAL,
